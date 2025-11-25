@@ -1,5 +1,5 @@
 ## 📝 프로젝트 소개
-
+ 
 ![image](https://github.com/akgkfk3/L2DSR-Load-Balancing-PoC-BMT/assets/55624470/24145d32-9614-42b1-8748-6176f62aa336)
 
 > 기존 Proxy 방식의 로드밸런서는 HTTP 요청과 응답을 모두 처리하기 때문에 높은 부하 상황에서 성능이 감소할 수 있습니다.
@@ -672,11 +672,11 @@ net.netfilter.nf_conntrack_count = 973977
 <table>
   	<tr>
   		<td align="center">
-      			문제 상황  
-    		</td>
+			문제 상황  
+		</td>
 		<td>
-      			HTTP 부하 테스트 시, 로드밸런서에서 다수의 Packet이 DROP 되는 이슈가 발생
-    		</td>
+			HTTP 부하 테스트 시, 로드밸런서에서 다수의 Packet이 DROP 되는 이슈가 발생
+		</td>
   	</tr>
 	<tr>
 		<td align="center">
@@ -684,15 +684,15 @@ net.netfilter.nf_conntrack_count = 973977
 		</td>
 		<td>
    			NIC 메모리 버퍼에 있는 패킷이 메인 메모리로 적재되는 것 보다 새로 들어오는 패킷이 많아 기존의 패킷이 Overwrite 
-    		</td>
+		</td>
 	</tr>
  	<tr>
-     		<td align="center">
+		<td align="center">
 			해결
 		</td>
 		<td>
-      			Packet 관련 IRQ 전용 코어를 매핑 + NIC에서 메모리로 적재하는 패킷의 Bucket Size를 조정하여 해결
-    		</td>
+			Packet 관련 IRQ 전용 코어를 매핑 + NIC에서 메모리로 적재하는 패킷의 Bucket Size를 조정하여 해결
+		</td>
       	</tr>
 </table>
 
